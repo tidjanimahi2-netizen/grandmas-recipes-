@@ -1,1 +1,18 @@
+body {
+    background-color: #fdf5e6; /* Цвет фона "под старину" */
+    font-family: 'Comic Sans MS', cursive; /* Домашний, уютный шрифт */
+    text-align: center;
+    color: #5d4037;
+}
+
+h1 {
+    color: #8b4513;
+}
+
+.recipe-photo {
+    width: 300px; /* Размер фото */
+    border: 5px solid #deb887; /* Рамка вокруг фото */
+    border-radius: 15px; /* Скругленные углы */
+    margin: 10px;
+}
 
