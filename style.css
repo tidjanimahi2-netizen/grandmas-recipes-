@@ -1,18 +1,59 @@
-body {
-    background-color: #fdf5e6; /* Цвет фона "под старину" */
-    font-family: 'Comic Sans MS', cursive; /* Домашний, уютный шрифт */
-    text-align: center;
-    color: #5d4037;
-}
+body { background: #0f0f0f; color: #fff; font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; }
 
-h1 {
-    color: #8b4513;
-}
+.header { padding: 40px 20px; text-align: center; }
+.header h1 { font-size: 2rem; margin-bottom: 5px; }
 
-.recipe-photo {
-    width: 300px; /* Размер фото */
-    border: 5px solid #deb887; /* Рамка вокруг фото */
-    border-radius: 15px; /* Скругленные углы */
-    margin: 
-10px;
+.recipes-grid { display: grid; gap: 20px; padding: 0 20px; }
+
+.recipe-card { 
+  background: #1e1e1e; border-radius: 20px; overflow: hidden;
+  transition: transform 0.3s;
+}
+.recipe-card:hover { transform: scale(1.02); }
+
+.recipe-img { width: 100%; height: 200px; object-fit: cover; }
+.info { padding: 15px; }
+
+.btn-buy { background: #ff4757; color: white; border: none; padding: 10px 20px; border-radius: 12px; width: 100%; font-weight: bold; }
+.btn-free { background: #2f3542; color: white; border: none; padding: 10px 20px; border-radius: 12px; width: 100%; }
+
+.modal { 
+  position: fixed; top:0; left:0; width: 100%; height: 100%; 
+  background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+  display: none; justify-content: center; align-items: center;
+}
+.modal-content { background: #1e1e1e; padding: 30px; border-radius: 25px; width: 80%; max-width: 400px; }
+
+.footer { text-align: center; color: #57606f; padding: 40px; font-size: 0.8rem; }
+.admin-panel {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 30px 20px;
+}
+.admin-panel input, .admin-panel textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #2f3542;
+  color: white;
+  box-sizing: border-box;
+}
+.btn-add {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: bold;
+}
+/* Эффект размытия для платного контента */
+.locked-content {
+  filter: blur(8px);
+  pointer-events: none;
+  /* Запрещает кликать */
+  user-select: none;
 }
