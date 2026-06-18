@@ -1,44 +1,125 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Бабушкины рецепты</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Cuisine de Grand-Mère</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Рецепты моей бабушки</h1>
-        <p>Добро пожаловать в мою уютную коллекцию домашних блюд!</p>
-    </header>
+  <header class="header">
+    <h1>Recettes</h1>
+    <p>Le meilleur de la cuisine traditionnelle</p>
+  </header>
 
-    <main>
-        <div class="recipe-card">
-            <h2>Мой фирменный борщ</h2>
-            <img src="borsch.jpg" alt="Борщ" class="recipe-photo">
-            <p>Это самый вкусный рецепт, который передается в нашей семье.</p>
+  <main class="container">
+    <div class="recipes-grid">
+      <div class="recipe-card">
+        <div class="badge premium">Premium</div>
+        <img src="Photo1.png" class="recipe-img">
+        <div class="info">
+          <h3>Tajine aux coings</h3>
+          <p>Un classique mijoté aux épices.</p>
+          <button class="btn-buy" data-name="Tajine aux coings">40 DH</button>
         </div>
-
-        <div class="recipe-card">
-            <h2>Домашние пирожки</h2>
-            <img src="pirozhki.jpg" alt="Пирожки" class="recipe-photo">
-            <p>Золотистые, сочные и очень ароматные!</p>
+      </div>
+      <div class="recipe-card">
+        <div class="badge gratuit">Gratuit</div>
+        <img src="Photo2.png" class="recipe-img">
+        <div class="info">
+          <h3>Baghrir</h3>
+          <p>Crêpes mille trous légères.</p>
+          <button class="btn-free" data-name="Baghrir">Voir</button>
         </div>
-    </main>
+      </div>
+      <div class="recipe-card">
+        <div class="badge premium">Premium</div>
+        <img src="photo3.png" class="recipe-img">
+        <div class="info">
+          <h3>Briouates</h3>
+          <p>Feuilletés croustillants au fromage.</p>
+          <button class="btn-buy" data-name="Briouates">30 DH</button>
+        </div>
+      </div>
+      <div class="recipe-card">
+        <div class="badge gratuit">Gratuit</div>
+        <img src="photo4.png" class="recipe-img">
+        <div class="info">
+          <h3>Verrines</h3>
+          <p>Un dessert frais et léger.</p>
+          <button class="btn-free" data-name="Verrines">Voir</button>
+        </div>
+      </div>
+    </div>
+  </main>
 
-    <script src="script.js"></script>
+  <div id="modal" class="modal"><div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Commander</h3>
+    <p id="modal-name"></p>
+    <input type="email" placeholder="Votre Email">
+    <button class="btn-pay">Confirmer</button>
+  </div></div>
+
+  <footer class="footer">&copy; 2026 Les Recettes de Grand-Mère</footer>
+  <script src="script.js"></script>
 </body>
 </html>
-<section class="recipe-card">
-    <h2>Recette de ma grand-mère</h2> <h3>La Soupe aux légumes (Борщ/Овощной суп)</h3>
-    
-    <h4>Ingrédients:</h4> <ul>
-        <li>Betteraves (Свекла)</li>
-        <li>Chou (Капуста)</li>
-        <li>Pommes de terre (Картофель)</li>
-        <li>Carottes (Морковь)</li>
-    </ul>
-    
-    <h4>Préparation:</h4> <p>Faites cuire les légumes dans l'eau bouillante jusqu'à ce qu'ils soient tendres.</p>
-    <p>(Варите овощи в кипящей воде до готовности.)</p>
-</section>
+<img src="Photo1.png" class="recipe-img>
+<input 
+  type="file" 
+  accept="image/*" 
+  capture="environment" 
+  id="cameraInput" 
+  style="display: none;" 
+  onchange="handleFileUpload(event)"
+>
+
+<button 
+  onclick="document.getElementById('cameraInput').click()" 
+  style="padding: 20px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 10px;"
+>
+  📸 Сфотографировать еду
+</button>
+
+<script>
+  function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+      console.log("Фото получено:", file.name);
+      // Сюда добавим логику отправки на сервер
+    }
+  }
+</script>
+<div class="recipe-card">
+  <img src="path_to_image.jpg" alt="Блюдо">
+  <h3>Название рецепта</h3>
+  <div class="meta">
+    <p>⏱ 45 минут</p>
+    <p>🍽 На 4 персоны</p>
+  </div>
+  <button onclick="editRecipe()">Редактировать</button>
+</div>
+
+<style>
+.recipe-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 15px;
+  padding: 15px;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.recipe-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+button {
+  background-color: #ff0000; /* Цвет как на сайте Pasta Grannies */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+</style>
