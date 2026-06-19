@@ -11,13 +11,14 @@
   <header class="header">
     <h1>Recettes</h1>
     <p>Le meilleur de la cuisine traditionnelle</p>
+    <div id="french-phrase" aria-live="polite" style="margin-top:12px; color:#d1d1d1;"></div>
   </header>
 
   <main class="container">
     <div class="recipes-grid">
       <div class="recipe-card">
         <div class="badge premium">Premium</div>
-        <img src="Photo1.png" class="recipe-img">
+        <img src="Photo1.png" class="recipe-img" alt="Tajine aux coings">
         <div class="info">
           <h3>Tajine aux coings</h3>
           <p>Un classique mijoté aux épices.</p>
@@ -26,7 +27,7 @@
       </div>
       <div class="recipe-card">
         <div class="badge gratuit">Gratuit</div>
-        <img src="Photo2.png" class="recipe-img">
+        <img src="Photo2.png" class="recipe-img" alt="Baghrir">
         <div class="info">
           <h3>Baghrir</h3>
           <p>Crêpes mille trous légères.</p>
@@ -35,7 +36,7 @@
       </div>
       <div class="recipe-card">
         <div class="badge premium">Premium</div>
-        <img src="photo3.png" class="recipe-img">
+        <img src="photo3.png" class="recipe-img" alt="Briouates">
         <div class="info">
           <h3>Briouates</h3>
           <p>Feuilletés croustillants au fromage.</p>
@@ -44,7 +45,7 @@
       </div>
       <div class="recipe-card">
         <div class="badge gratuit">Gratuit</div>
-        <img src="photo4.png" class="recipe-img">
+        <img src="photo4.png" class="recipe-img" alt="Verrines">
         <div class="info">
           <h3>Verrines</h3>
           <p>Un dessert frais et léger.</p>
@@ -52,74 +53,40 @@
         </div>
       </div>
     </div>
+
+    <!-- Camera input (hidden) -->
+    <input 
+      type="file" 
+      accept="image/*" 
+      capture="environment" 
+      id="cameraInput" 
+      style="display: none;" 
+      onchange="handleFileUpload(event)"
+    >
+
+    <div style="max-width:1200px;margin:20px auto;padding:0 20px;">
+      <button 
+        onclick="document.getElementById('cameraInput').click()" 
+        style="padding: 12px 18px; font-size: 16px; background: #28a745; color: white; border: none; border-radius: 10px;"
+        aria-label="Prendre une photo"
+      >
+        📸 Prendre une photo d'un plat
+      </button>
+    </div>
+
   </main>
 
-  <div id="modal" class="modal"><div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Commander</h3>
-    <p id="modal-name"></p>
-    <input type="email" placeholder="Votre Email">
-    <button class="btn-pay">Confirmer</button>
-  </div></div>
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Fermer">&times;</button>
+      <h3>Commander</h3>
+      <p id="modal-name"></p>
+      <input type="email" placeholder="Votre Email" aria-label="Email pour la commande">
+      <button class="btn-pay">Confirmer</button>
+    </div>
+  </div>
 
   <footer class="footer">&copy; 2026 Les Recettes de Grand-Mère</footer>
   <script src="script.js"></script>
 </body>
 </html>
-<img src="Photo1.png" class="recipe-img>
-<input 
-  type="file" 
-  accept="image/*" 
-  capture="environment" 
-  id="cameraInput" 
-  style="display: none;" 
-  onchange="handleFileUpload(event)"
->
-
-<button 
-  onclick="document.getElementById('cameraInput').click()" 
-  style="padding: 20px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 10px;"
->
-  📸 Сфотографировать еду
-</button>
-
-<script>
-  function handleFileUpload(event) {
-    const file = event.target.files[0];
-    if (file) {
-      console.log("Фото получено:", file.name);
-      // Сюда добавим логику отправки на сервер
-    }
-  }
-</script>
-<div class="recipe-card">
-  <img src="path_to_image.jpg" alt="Блюдо">
-  <h3>Название рецепта</h3>
-  <div class="meta">
-    <p>⏱ 45 минут</p>
-    <p>🍽 На 4 персоны</p>
-  </div>
-  <button onclick="editRecipe()">Редактировать</button>
-</div>
-
-<style>
-.recipe-card {
-  border: 1px solid #f0f0f0;
-  border-radius: 15px;
-  padding: 15px;
-  max-width: 300px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.recipe-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-button {
-  background-color: #ff0000; /* Цвет как на сайте Pasta Grannies */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-}
-</style>
